@@ -31,6 +31,7 @@ sqrt(25)
 ## Criar um objeto é uma forma de criar e guardar
 ## dados no environment do seu RStudio
 
+objeto <- 3
 objeto1 <- 5 - 2
 
 ## O valor de um objeto pode ser uma palavra = STRING
@@ -47,7 +48,7 @@ class(eu)
 class(objeto1)
 
 #############
-
+ 
 ## vetores
 
 ## Dados podem ser atribuídos a um vetor
@@ -64,6 +65,7 @@ vetor2 <- c(4,5,6)
 ## é possível fazer operações aritméticas com vetores
 
 vetor1 + vetor2
+vetor2 - vetor1
 
 ## EXEMPLO CONCRETO
 
@@ -142,8 +144,12 @@ sum(world.pop) / length(world.pop)
 # Também é possivel especificar um nome para os argumentos
 # funcname(arg1 = input1, arg2 = input2).
 
+
 # SEQUÊNCIA
 # Função seq()
+
+yearex <- seq(from = 1900, to = 2000, by = 1)
+yearex
 
 year <- seq(from = 1950, to = 2010, by = 10)
 year
@@ -155,6 +161,9 @@ year2
 year2 [c(1, 2)] <- c(1959, 1969)
 year2
 
+yearex [c(1,2)] <- c(1898, 1899) 
+yearex
+
 # Sequência sem vetores, com intervalos específicos
 seq(to = 2010, by = 10, from = 1950)
 seq(from = 2010, to = 1950, by = -10)
@@ -164,6 +173,8 @@ seq(from = 2010, to = 1950, by = -10)
 
 2012:2008
 
+1999:2007
+ 
 # Vamos nomear os dados atribuídos ao vetor world.pop
 
 # o vetor ainda não foi nomeado - resposta NULL
@@ -174,6 +185,7 @@ names(world.pop) <- year
 world.pop
 
 ## criação de data frames - TABELAS
+##data.frame
 
 UNpop <- data.frame(year, world.pop)
 print (UNpop)
@@ -186,12 +198,19 @@ ncol(UNpop)
 ##dim() combina os resultados colunas e linhas
 dim(UNpop)
 
+
+### ANALISE DE DADOS ESPECIFICOS
+
 # Visualização de valores de vetores específicos no Data Frame
 UNpop$world.pop
 UNpop$year
 
 # Função de sumário disponível
 summary(UNpop)
+
+### exemplo de grafico 
+
+boxplot(UNpop)
 
 ## BASE DE DADOS AFGHAN
 ## UTILIZAÇÃO DA FERRAMENTA IMPORT!
@@ -217,6 +236,7 @@ var(afghan$age)
 
 #Quartil
 quantile(afghan$age, probs = seq(from = 0, to = 1, by = 0.2))
+quantile(afghan$age, probs = seq(from = 0, to = 1, by = 0.3))
 
 ## cálculo da distancia interquartil
 IQR(afghan$age)
@@ -232,8 +252,10 @@ summary(afghan$age)
 
 barplot(afghan$age)
 
+## FREQUENCIA ABSOLUTA
+
 age_renge <- table(cut(afghan$age,
-                       breaks = seq(0,80,by =20),
+                       breaks = seq(0,80,by = 20),
                        right = FALSE))
 
 barplot(age_renge)
@@ -242,6 +264,8 @@ barplot(age_renge, main = "Gráficos em barras de idade",
         xlab = 'Classe de Idade',
         ylab = 'Frequencia Absoluta',
         ylim = c(0, 1700))
+
+### FREQUENCIA RELATIVA
 
 age_renge_pro <- prop.table(table(cut(afghan$age,
                                       breaks = seq(0,80, by = 20))))
@@ -252,12 +276,17 @@ barplot(age_renge_pro,
         ylab = 'Frequencia Relativa',
         ylim = c(0,0.7))
 
+
 ## HISTOGRAMA
 
 hist(afghan$age)
 
 hist(afghan$age, freq = TRUE, ylim = c(0,600),
      xlab = 'idade',
+     main = 'histograma da variavel idade')
+
+hist(afghan$age, freq = TRUE, ylim = c(0,600),
+     xlab = 'idade', xlim = c(20,60),
      main = 'histograma da variavel idade')
 
 boxplot(afghan$age, 
@@ -318,8 +347,12 @@ mean(x)
 
 mean(x, na.rm = TRUE)
 
+mean(afghan$income, na.rm = TRUE)
+mean(afghan$age)
+
 summary(afghan$violent.exp.ISAF)
 summary(afghan$violent.exp.taliban)
+
 table(ISAF = afghan$violent.exp.ISAF,
       Taliban = afghan$violent.exp.taliban, exclude = NULL)
 
