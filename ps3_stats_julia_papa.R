@@ -66,3 +66,41 @@ plot(x,y)
 x <- seq(0,5,by = 0.5)
 y <- dbinom(x,5,0.5)
 plot(x,y)
+
+## EXERCÍCIO 13 
+## 13. Na tabela abaixo, X significa número de filhos homens em famílias com 12 
+## filhos. Calcule para cada valor da variável o número de famílias que você
+## deveria esperar se X ??? b(12; 0,5).
+## O modelo binomial é razoável para explicar o fenômeno?
+
+## A Função dbinom será utilizada para a resolução desse exercício
+
+## Com 0 filho
+dbinom(0,12,0.5)
+## Com 1 filho
+dbinom(1,12,0.5)
+## Com 2 filhos
+dbinom(2,12,0.5)
+## Com 3 filhos
+dbinom(3,12,0.5)
+## Com 4 filhos
+dbinom(4,12,0.5)
+## Com 5 filhos
+dbinom(5,12,0.5)
+## Com 6 filhos
+dbinom(6,12,0.5)
+## Com 7 filhos
+dbinom(7,12,0.5)
+## Com 8 filhos
+dbinom(8,12,0.5)
+## Com 9 filhos
+dbinom(9,12,0.5)
+## Com 10 filhos
+dbinom(10,12,0.5)
+## Com 11 filhos
+dbinom(11,12,0.5)
+## Com 12 filhos
+dbinom(12,12,0.5)
+
+## O modelo binomial é razoável para a explicação do fenômeno.
+
