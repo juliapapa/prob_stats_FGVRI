@@ -1,53 +1,53 @@
-## PROBABILIDADE E ESTATÍSTICA -- PROBLEM SET 3
+## PROBABILIDADE E ESTATÃSTICA -- PROBLEM SET 3
 ## Prof. Ariana Costa
-## Júlia Papa Gonçalves Mão Cheia (C353125) - Turma 1
+## JÃºlia Papa GonÃ§alves MÃ£o Cheia (C353125) - Turma 1
 
-## EXERCÍCIO 10 - B
-## Calcule, para cada valor de X, o número de ninhadas que você deve esperar 
-## se X ~ b(5, p), em que p é a proporção média de machos calculada em (a).
+## EXERCÃCIO 10 - B
+## Calcule, para cada valor de X, o nÃºmero de ninhadas que vocÃª deve esperar 
+## se X ~ b(5, p), em que p Ã© a proporÃ§Ã£o mÃ©dia de machos calculada em (a).
 
 ## Considerando X ~ b(5, p) 
-## Proporção de machos calculada em (a) = 24
+## ProporÃ§Ã£o de machos calculada em (a) = 24
 
 ## quando X = 0
 dbinom(0,5, 0.48)
 ## resultado --> 0.0380
-## nº de ninhadas = 76
+## nÂº de ninhadas = 76
 0.0380 * 2000
 
 ## quando X = 1
 dbinom(1,5, 0.48)
 ## resultado --> 0.175
-## nº de ninhadas = 350
+## nÂº de ninhadas = 350
 0.175 * 2000
 
 ## quando X = 2
 dbinom(2,5, 0.48)
 ## resultado --> 0.323
-## nº de ninhadas = 646
+## nÂº de ninhadas = 646
 0.323 * 2000
 
 ## quando X = 3
 dbinom(3,5, 0.48)
 ## resultado --> 0.299 
-## nº de ninhadas = 598
+## nÂº de ninhadas = 598
 0.299 * 2000
 
 ## quando X = 4
 dbinom(4,5, 0.48)
 ## resultado --> 0.138 
-## nº de ninhadas = 276
+## nÂº de ninhadas = 276
 0.138 * 2000
 
 ## quando X = 5
 dbinom(5,5, 0.48)
 ## resultado --> 0.025 
-## nº de ninhadas = 50
+## nÂº de ninhadas = 50
 0.025 * 2000
 
-## EXERCÍCIO 11
-## Se X tem distribuição binomial com parâmetros n = 5 e p = 1/2, faça
-## os gráficos da distribuição de X e da função de distribuição acumulada F(x).
+## EXERCÃCIO 11
+## Se X tem distribuiÃ§Ã£o binomial com parÃ¢metros n = 5 e p = 1/2, faÃ§a
+## os grÃ¡ficos da distribuiÃ§Ã£o de X e da funÃ§Ã£o de distribuiÃ§Ã£o acumulada F(x).
 
 pbinom(0,5, 0.5)
 x1 <- dbinom(0,5, 0.5)
@@ -57,23 +57,23 @@ x4 <- dbinom(3,5, 0.5)
 x5 <- dbinom(4,5, 0.5)
 x6 <- dbinom(5,5, 0.5)
 
-## Distribuição de X
+## DistribuiÃ§Ã£o de X
 x <- seq(0,5,by = 0.5)
 y <- pbinom(x,5,0.5)
 plot(x,y)
 
-## Distribuição da F.D.A 
+## DistribuiÃ§Ã£o da F.D.A 
 x <- seq(0,5,by = 0.5)
 y <- dbinom(x,5,0.5)
 plot(x,y)
 
-## EXERCÍCIO 13 
-## 13. Na tabela abaixo, X significa número de filhos homens em famílias com 12 
-## filhos. Calcule para cada valor da variável o número de famílias que você
+## EXERCÃCIO 13 
+## 13. Na tabela abaixo, X significa nÃºmero de filhos homens em famÃ­lias com 12 
+## filhos. Calcule para cada valor da variÃ¡vel o nÃºmero de famÃ­lias que vocÃª
 ## deveria esperar se X ??? b(12; 0,5).
-## O modelo binomial é razoável para explicar o fenômeno?
+## O modelo binomial Ã© razoÃ¡vel para explicar o fenÃ´meno?
 
-## A Função dbinom será utilizada para a resolução desse exercício
+## A FunÃ§Ã£o dbinom serÃ¡ utilizada para a resoluÃ§Ã£o desse exercÃ­cio
 
 ## Com 0 filho
 dbinom(0,12,0.5)
@@ -102,5 +102,15 @@ dbinom(11,12,0.5)
 ## Com 12 filhos
 dbinom(12,12,0.5)
 
-## O modelo binomial é razoável para a explicação do fenômeno.
+## O modelo binomial Ã© razoÃ¡vel para a explicaÃ§Ã£o do fenÃ´meno.
 
+## EXERCÃCIO 28
+## As alturas de 10.000 alunos de um colÃ©gio tÃªm distribuiÃ§Ã£o 
+## aproximadamente normal, com mÃ©dia 170 cm e desvio padrÃ£o 5 cm.
+## a- Qual o nÃºmero esperado de alunos com altura superior a 165 cm?
+## b- Qual o intervalo simÃ©trico em torno da mÃ©dia que conterÃ¡ 75% 
+## das alturas dos alunos?
+
+pnorm(-1,lower.tail=FALSE)
+qnorm(0.125,170,5,lower.tail = TRUE)
+qnorm(0.125,170,5,lower.tail = FALSE)
