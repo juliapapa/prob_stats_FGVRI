@@ -1,0 +1,48 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{final_project_stats}
+\author{juliapapa }
+\date{June 2021}
+
+\begin{document}
+
+\begin{table}[!htbp] \centering 
+  \caption{Modelo 1} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lD{.}{.}{-3} } 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{1}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-2} 
+\\[-1.8ex] & \multicolumn{1}{c}{fdi\_inflow} \\ 
+\hline \\[-1.8ex] 
+ corruption & -0.328 \\ 
+  & (0.402) \\ 
+  & \\ 
+ Constant & 2.725^{***} \\ 
+  & (0.566) \\ 
+  & \\ 
+\hline \\[-1.8ex] 
+Observations & \multicolumn{1}{c}{37} \\ 
+R$^{2}$ & \multicolumn{1}{c}{0.019} \\ 
+F Statistic & \multicolumn{1}{c}{0.666 (df = 1; 35)} \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table} 
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{lrrrrr}
+  \hline
+ & Df & Sum Sq & Mean Sq & F value & Pr($>$F) \\ 
+  \hline
+ocde2\$corruption & 1 & 2.80 & 2.80 & 0.67 & 0.4199 \\ 
+  Residuals & 35 & 146.89 & 4.20 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+\end{document}
